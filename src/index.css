@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gradient {
+  background: radial-gradient(
+    79.84% 79.84% at 32.27% 91.27%,
+    rgba(31, 169, 17, 0.810119) 17.21%,
+    #2f15d0 64.58%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.bg-image {
+  background-image: url("./assets/blue.svg");
+  background-position: -114px 0 0 -384px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel {
+  display: inline-flex;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 24px));
+  }
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  animation: scroll 10s linear infinite;
 }
